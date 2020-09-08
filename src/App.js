@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import page1 from './pages/page-1/';
 import page2 from './pages/page-2/';
 
-import './App.css';
+import './App.scss';
 
 function App() {
 	return (
