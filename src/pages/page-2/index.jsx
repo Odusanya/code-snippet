@@ -1,16 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-import CodeSnippet from './../../components/code-snippet/CodeSnippet'
+import CodeGroup from './../../components/code-group/CodeGroup';
+import code from '../../requests/page-2/requests';
 
-function App() {
+const page2 = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Page Two!</h1>
+    <div className="page">
+      <header className="header">
+				<h1>Page Two!</h1>
+				<p>Go back <Link to="/">home</Link></p>
 			</header>
-			<code><CodeSnippet/></code>
+			<CodeGroup code={code}/>
     </div>
   );
 }
 
-export default App;
+export default page2;

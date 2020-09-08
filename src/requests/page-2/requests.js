@@ -26,8 +26,10 @@ $customer = $stripe->customers->create([
 echo $customer;
 `;
 
-export const code = {
+const code = {
 	curl: codeCurl,
 	node: codeNode,
 	php: codePHP,
 }
+
+export default code;

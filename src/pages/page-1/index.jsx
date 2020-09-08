@@ -6,10 +6,10 @@ import code from '../../requests/page-1/requests';
 
 const App = () => {
   return (
-    <div className="App">
-			<header className="App-header">
+    <div className="page">
+			<header className="header">
 				<h1>Introduction!</h1>
-				<p>Visit the <Link to="/two">next page</Link></p>
+				<p>Go to the <Link to="/two">next page</Link></p>
 			</header>
 			<CodeGroup code={code}/>
     </div>
