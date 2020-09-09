@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
-import CodeSnippet from '../code-snippet/CodeSnippet';
+import React from 'react';
+
+import { useRecoilState } from 'recoil'
+import { codeLanguageState } from '../../recoil/index'
+import CodeSnippet from '../CodeSnippet/CodeSnippet';
 import './CodeGroup.scss';
 
 
@@ -17,8 +20,7 @@ const supportedSyntax = {
 };
 
 const CodeGroup = ({ code }) => {
-	const options = Object.keys(code);
-	const [currentLang, setCurrentLang] = useState(options[0]);
+	const [currentLang, setCurrentLang] = useRecoilState(codeLanguageState);
 	const handleChange = event => {
 		const { target } = event;
 		setCurrentLang(target.value);

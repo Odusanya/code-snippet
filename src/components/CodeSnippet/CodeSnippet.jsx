@@ -4,15 +4,14 @@ import theme from "prism-react-renderer/themes/nightOwl";
 
 import './CodeSnippet.scss';
 
-const codeSample = `
-const x = x => j;
-const x = x => j;
-const x = x => j;
-const x = x => j;
-`.trim();
+const defaultCodeSampe = `
+ this is a placeholder sample
+ this is a placeholder sample
+ this is a placeholder sample
+`;
 
-const CodeSnippet = ({ code = codeSample, syntax, className }) => (
-	<Highlight {...defaultProps} theme={theme} code={code.trim()} c language={syntax = 'js'}>
+const CodeSnippet = ({ code = defaultCodeSampe, syntax, className }) => (
+	<Highlight {...defaultProps} theme={theme} code={code.trim()} language={syntax = 'js'}>
 		{({ style, tokens, getLineProps, getTokenProps }) => (
 			<pre className={`c-pre ${className}`}>
         {tokens.map((line, i) => (
