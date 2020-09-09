@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import CodeGroup from './../../components/code-group/CodeGroup';
+import CodeGroup from '../../components/CodeGroup/CodeGroup';
 import code from '../../requests/page-2/requests';
 
 const page2 = () => {

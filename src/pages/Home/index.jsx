@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import CodeGroup from './../../components/code-group/CodeGroup';
+import { useRecoilValue } from 'recoil'
+import { codeLanguageState } from '../../recoil';
+
+import CodeGroup from '../../components/CodeGroup/CodeGroup';
 import code from '../../requests/page-1/requests';
 
 const App = () => {
@@ -11,7 +14,8 @@ const App = () => {
 				<h1>Introduction!</h1>
 				<p>Go to the <Link to="/two">next page</Link></p>
 			</header>
-			<CodeGroup code={code}/>
+			<CodeGroup code={code} />
+			<p>The default language is: { useRecoilValue(codeLanguageState) }</p>
     </div>
   );
 }
