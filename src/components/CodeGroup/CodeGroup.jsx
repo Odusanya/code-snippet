@@ -3,8 +3,8 @@ import React from 'react';
 import { useRecoilState } from 'recoil'
 import { codeLanguageState } from '../../recoil/index'
 import CodeSnippet from '../CodeSnippet/CodeSnippet';
-import './CodeGroup.scss';
 
+import './CodeGroup.scss';
 
 const languageOptions = {
 	curl: 'cURL',
@@ -12,36 +12,28 @@ const languageOptions = {
 	php: 'PHP',
 };
 
-const supportedSyntax = {
-	curl: 'Bash',
-	node: 'js',
-	ruby: 'rb',
-	php: 'php',
-};
-
 const CodeGroup = ({ code }) => {
-	const [currentLang, setCurrentLang] = useRecoilState(codeLanguageState);
-	const handleChange = event => {
-		const { target } = event;
-		setCurrentLang(target.value);
-	};
+	const [language, setLanguage] = useRecoilState(codeLanguageState);
+	const handleChange = event => setLanguage(event.target.value);
 
 	return (
 		<code className="c-code-group">
 			<span className="c-dropdown">
-				<select name="codeSelect" defaultValue={currentLang} onChange={handleChange}>
-					{Object.keys(code).map((lang, i) => (
+				<select name="codeSelect" defaultValue={language} onChange={handleChange}>
+					{Object.keys(code).map((lang, index) => (
 						<option
-							key={i}
-							value={lang.toLowerCase()}>{languageOptions[lang]}</option>
-						)
+							key={index}
+							value={lang.toLowerCase()}>{languageOptions[lang]}</option>)
 					)}
 				</select>
 			</span>
 			<>
-				{/* Refactor this later. Adding this so I can add page snippet transitions with css */}
-				{Object.keys(languageOptions).map((lang, i) => (
-					<CodeSnippet key={i} code={code[lang]} className={ currentLang === lang.toLowerCase() ? 'c-snippet c-snippet--is-active' : 'c-snippet' } syntax={supportedSyntax[lang]}/>
+				{Object.keys(code).map((lang, i) => (
+					<CodeSnippet
+						key={i}
+						code={code[lang]}
+						className={language === lang ? 'c-snippet c-snippet--is-active' : 'c-snippet'}
+						syntax={lang} />
 				))}
 			</>
 		</code>
