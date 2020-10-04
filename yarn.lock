@@ -9108,6 +9108,11 @@ realpath-native@^1.1.0:
   dependencies:
     util.promisify "^1.0.0"
 
+recoil-persist@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/recoil-persist/-/recoil-persist-0.7.0.tgz#0720490888c582f546c818eb3364a009918650cf"
+  integrity sha512-Jc0IFSjmT1h5gQGX8n9XLjQDNstovVUmeAQTlgoX6VnmUMrWjdYn7lOvQg+qHejqAlLcZCzKxCkNbJrIXJ9EIQ==
+
 recoil@^0.0.10:
   version "0.0.10"
   resolved "https://registry.yarnpkg.com/recoil/-/recoil-0.0.10.tgz#679ab22306f559f8a63c46fd5ff5241539f9248f"
