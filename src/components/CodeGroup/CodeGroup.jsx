@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import { useRecoilState } from 'recoil'
-import { codeLanguageState } from '../../recoil/index'
+import { codeLanguageState } from '../../store/index'
 import CodeSnippet from '../CodeSnippet/CodeSnippet';
 
 import './CodeGroup.scss';
@@ -13,13 +13,22 @@ const languageOptions = {
 };
 
 const CodeGroup = ({ code }) => {
+	const select = useRef();
 	const [language, setLanguage] = useRecoilState(codeLanguageState);
 	const handleChange = event => setLanguage(event.target.value);
+
+	useEffect(() => {
+		select.current.value = language;
+	}, [language]);
 
 	return (
 		<code className="c-code-group">
 			<span className="c-dropdown">
-				<select name="codeSelect" defaultValue={language} onChange={handleChange}>
+				<select
+					ref={select}
+					name="codeSelect"
+					defaultValue={language}
+					onChange={handleChange}>
 					{Object.keys(code).map((lang, index) => (
 						<option
 							key={index}
@@ -28,9 +37,9 @@ const CodeGroup = ({ code }) => {
 				</select>
 			</span>
 			<>
-				{Object.keys(code).map((lang, i) => (
+				{Object.keys(code).map((lang, index) => (
 					<CodeSnippet
-						key={i}
+						key={index}
 						code={code[lang]}
 						className={language === lang ? 'c-snippet c-snippet--is-active' : 'c-snippet'}
 						syntax={lang} />
