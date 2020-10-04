@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import CodeGroup from '../../components/CodeGroup/CodeGroup';
-import code from '../../data/APIRequests/page-2/requests';
+import CodeGroup from '../components/CodeGroup/CodeGroup';
+import code from '../data/APIRequests/Payments/requests';
 
-const page2 = () => {
+const Payments = () => {
   return (
     <div className="page">
       <header className="header">
-				<h1>Page Two!</h1>
+				<h1>Payments!</h1>
 				<p>Go back <Link to="/">home</Link></p>
 			</header>
 			<CodeGroup code={code}/>
@@ -16,4 +16,4 @@ const page2 = () => {
   );
 }
 
-export default page2;
+export default Payments;

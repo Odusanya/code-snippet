@@ -12,10 +12,13 @@ const App = () => {
     <div className="page">
 			<header className="header">
 				<h1>Introduction!</h1>
-				<p>Go to the <Link to="/two">next page</Link></p>
+				<p>Visit our <Link to="/payments">payments</Link> page</p>
 			</header>
+			<p>Code snippet one</p>
 			<CodeGroup code={code} />
 			<p>The default language is: { useRecoilValue(codeLanguageState) }</p>
+			<p>Code snippet two</p>
+			<CodeGroup code={code} />
     </div>
   );
 }
