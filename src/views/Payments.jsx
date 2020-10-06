@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import CodeGroup from '../components/CodeGroup/CodeGroup';
-import code from '../data/APIRequests/Payments/requests';
+// import codeGroup and payments code object here
 
 const Payments = () => {
   return (
@@ -11,7 +10,8 @@ const Payments = () => {
 				<h1>Payments!</h1>
 				<p>Go back <Link to="/">home</Link></p>
 			</header>
-			<CodeGroup code={code}/>
+			{/* Add code snippet here */}
+
     </div>
   );
 }

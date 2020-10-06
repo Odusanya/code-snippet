@@ -12,7 +12,6 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
-    "recoil": "^0.0.10"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -35,7 +34,4 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "recoil-persist": "^0.7.0"
-  }
 }
