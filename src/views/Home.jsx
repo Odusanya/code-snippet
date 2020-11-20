@@ -5,7 +5,7 @@ import { useRecoilValue } from 'recoil'
 import { codeLanguageState } from '../store';
 
 import CodeGroup from '../components/CodeGroup/CodeGroup';
-import code from '../data/APIRequests/Home/requests';
+import code from '../utils/HomeRequests';
 
 const App = () => {
   return (

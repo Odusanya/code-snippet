@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import CodeGroup from '../components/CodeGroup/CodeGroup';
-import code from '../data/APIRequests/Payments/requests';
+import code from '../utils/PaymentRequests';
 
 const Payments = () => {
   return (
