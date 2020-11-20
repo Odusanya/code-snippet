@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 // Remove undo the code comments below at the end of the tutorial
 
 // import CodeGroup from '../components/CodeGroup/CodeGroup';
-// import code from '../data/APIRequests/Payments/requests';
+// import code from '../utils/PaymentsRequests';
+
 
 const Payments = () => {
   return (
